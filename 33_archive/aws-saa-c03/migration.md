@@ -1,0 +1,195 @@
+---
+id: 20230717192701
+tags: [aws-saa-c03, migration]
+---
+
+# Migration
+
+## How To Migrate Data?
+
+* Over the internet - utilising an existing connection
+* Direct Connect - faster than over the internet, however, impractical
+  if connection is not required after migration
+* Physical - physically delivering data via hardware storage medium
+
+## Snow Family
+
+* AWS Snow Family is a set of secure appliances that provide
+  petabyte-scale data collection and processing solutions at the edge
+  and migrate large-scale data in and out of AWS
+* Snow Family offers built-in computing capabilities, allowing customers
+  to run operations in remote location which lack data centre access or
+  reliable network connections
+* Snowcone:
+  * 8TB of storage, 4GB of memory, 2 vCPUs
+  * Easily migrate data to AWS after it's been processed
+  * IoT sensor integration
+  * Optimal for edge computing
+* Snowball Edge:
+  * 48TB - 81TB storage
+  * Storage, Compute, and GPU options
+  * Varying amount of CPU and RAM
+  * Optimal for off-the-grid computing or migrating to AWS
+* Snowmobile:
+  * 100PB of storage
+  * Designed for exabyte-scale data center migration
+* Snow Family is useful for migrating data that needs to be encrypted at
+  rest and in transit
+* Generally, data migration takes around a week
+
+## Storage Gateway
+
+* AWS Storage Gateway is a service that connects an on-prem software
+  appliance with cloud-based storage to provide seamless and secure
+  integration between your on-prem IT environment and the AWS storage
+  infrastructure in the AWS Cloud
+* Storage Gateway runs on-prem as a VM
+* File Gateway:
+  * NFS or SMB mount
+  * Backup all data or a cache copy of recently used files
+  * Extend on-prem storage (particularly useful if local storage if
+    full)
+  * Aid migrations to AWS
+* Volume Gateway:
+  * iSCSI mount
+  * Cached or stored mode
+  * Create EBS snapshots
+  * Optimal for backup or migration
+* Tape Gateway:
+  * Replace physical tapes
+  * Doesn't change current workflow
+  * Encrypted communication
+
+## AWS DataSync
+
+* AWS DataSync is an online data movement and discovery service that
+  simplifies data migration and helps you quickly, easily, and securely
+  transfer your file or object data to, from, and between AWS storage
+  services
+* Agent-based solution (not required for migration between AWS services
+  in the same account)
+* Optimal for a one time migration
+* Supports data being migrated to S3, EFS, and FSx
+
+## AWS Transfer Family
+
+* AWS Transfer Family is a secure transfer service that enables you to
+  transfer files into and out of AWS storage services (S3 or EFS)
+* Transfer Family uses the SFTP, FTPS, or FTP protocol to transfer data
+* Only SFTP and FTPS are permitted for transfers originating from
+  outside of the AWS account
+* Generally used for legacy applications
+
+## AWS Migration Hub
+
+* AWS Migration Hub (Migration Hub) provides a single place to discover
+  your existing servers, plan migrations, and track the status of each
+  application migration. The Migration Hub provides visibility into your
+  application portfolio and streamlines planning and tracking. You can
+  visualize the connections and the status of the servers and databases
+  that make up each of the applications you are migrating, regardless of
+  which migration tool you are using
+* Migration Hub integrates with Server Migration Service (SMS) and
+  Database Migration Service (DMS)
+* Server Migration Service, simply put, migrates on-prem VMs to AWS by
+  uploading volumes and converting them to EBS snapshots
+* Database Migration Service migrates Oracle or SQL Server databases to
+  an Aurora Database using the AWS Schema Conversion Tool
+* Migration phases:
+  * Discover phase - find servers and databases to plan migrations
+  * Migrate phase - connect tools to Migration Hub, and start migrating
+  * Track phase - follow migration progress and statuses
+
+## AWS Server Migration Service (SMS)
+
+* AWS SMS automates the migration of on-prem servers to AWS
+* Supports vSphere, Hyper-V, SCVMM, and Azure VMs
+* Creates incremental replicas of server VMs, and converts them to AMIs
+  that can be deployed to EC2
+* Handles volume replication
+* Can schedule replication intervals as you wish and track the progress
+  of server groups as they migrate
+* Due to incremental migrations, allows quick testing of migrated
+  servers
+* Minimises downtime that would usually occur during migrations
+
+## AWS Database Migration Service (DMS)
+
+* AWS Database Migration Service (AWS DMS) is a cloud service that makes
+  it possible to migrate relational databases, data warehouses, NoSQL
+  databases, and other types of data stores
+* Can migrate database between AWS and on-prem (one party of the
+  migration must be within AWS)
+* Either perform a one-time migration or replicate ongoing changes
+  continuously
+* Schema Conversion Tool (SCT) allows the translation of database
+  schemas between platforms
+* Gain advantages of AWS e.g. cost, efficiency, security etc.
+* How DMS works:
+  1. Create source and target connections
+  1. Schedule tasks to run on the DMS server to migrate data
+  1. AWS creates the tables and primary keys (if they do not exist) -
+     optionally, you can create the tables beforehand
+  1. Leverage the SCT for creating some or all of the tables, indexes
+     etc.
+  1. Source and target are referred to as endpoints
+* Data can easily between migrated to the same engine
+* Data can be migrated between different engines
+* Migration types:
+  * Full Load migration - all existing data is moved from sources to
+    targets in parallel, changes made during this migration are cached on
+    the replication server
+  * Full Load and Change Data Capture (CDC) - the above, except changes
+    made during migration are captured (only type to guarantee
+    transactional integrity)
+  * CDC Only - Only replicate the data changes from the source databases
+* Migrate large data stores (>= TBs) with AWS Snowball
+  * Can still leverage the SCT
+  * DMS can load extracted data from S3 and migrate to a target
+  * Also CDC compatible
+
+## AWS Schema Conversion Tool (SCT)
+
+* You can use the AWS Schema Conversion Tool (AWS SCT) to convert your
+  existing database schema from one database engine to another
+* Can convert many types of relational databases, including OLAP and
+  OLTP, as well as data warehouses
+* Converted schemas can target and support RDS engine type, Aurora, or
+  Redshift
+* Converted schemas can be used with DBs running on EC2, or data stored
+  in S3
+
+## AWS Application Discovery Service (ADS)
+
+* AWS Application Discovery Service helps you plan your migration to the
+  AWS cloud by collecting usage and configuration data about your
+  on-premises servers and databases
+* ADS integrates with AWS Migration Hub - simplifying migrations and
+  tracking their statuses
+* You can view the discovered servers, group them into applications, and
+  then track the migration status of each application
+* AWS offers two discovery types - agentless and agent based
+* Agentless:
+  * Complete by the Agentless Collector (an OVA file in VMware vCenter)
+  * Identifies hosts and VMs in vCenter
+  * Tracks and collects IP and MAC addresses, resources allocations, and
+    hostnames
+  * Collects utilisation data metrics
+* Agent Based:
+  * Deploy the AWS Application Discovery Agent
+  * Install on each VM and physical server
+  * Installer available for Windows and Linux
+  * Collects a wider range of data e.g. static config data, time-series
+    performance information, network connections, and OS processes
+
+## AWS Application Migration Service (MGN)
+
+* AWS Application Migration Service (MGN) is a highly automated
+  lift-and-shift (rehost) solution that simplifies, expedites, and
+  reduces the cost of migrating applications to AWS
+* Can be used to migration physical, virtual, or cloud servers avoiding
+  disruptions
+* Replicates servers into AWS
+* Recovery Time Objective (RTO) - usually just minutes; depends on OS
+  boot time
+* Recovery Point Objective (RPO) - measure in the sub-second range

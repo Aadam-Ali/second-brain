@@ -1,0 +1,247 @@
+---
+id: 20230610142206
+tags: [aws-saa-c03, governance]
+---
+
+# Governance
+
+## Organizations
+
+* A free governance tool that allows the creation and management of
+  multiple AWS accounts from a single account
+* Key features:
+  * Logging accounts to centralise logs
+  * Programmatic creation
+  * Reserved instances are shared across accounts
+  * Billing for all accounts is managed by the root account
+  * Service Control Policies (SCPs) to limit permissions for accounts,
+    has the highest priority
+
+## AWS Resource Access Manager (RAM)
+
+* A free service to share resources with other accounts, either
+  externally or within an organisation
+* RAM or VPC Peering?
+  * RAM should be used when sharing resources within the same region
+  * VPC Peering should be used when sharing resources across regions
+
+## Cross Account Role Access
+
+* Create cross account roles rather than new IAM users
+* Using IAM roles prevents the need to distribute permanent credentials
+
+## AWS Config
+
+* An inventory management and control tool
+* Allows users to enforce standards in accounts
+* Can identify which resources exist in an account, or have been deleted
+* Can create rules to notify when resources don't conform with
+  requirements or even automatically resolve the issue
+* Can view the history of the account e.g. when changes were made and by
+  who
+
+# Directory Service
+
+* A fully managed version of Active Directory
+* Managed Microsoft AD - the enitre AD suite
+* AD Connector - creates a tunnel between AWS and on prem AD
+* Simple AD - standalone directory powered by Linux Samba AD-compatible
+  server
+
+## Cost Explorer
+
+* An easy to use tool that allows users to visualise cloud costs, it
+  allows users to create custom reports based on various parameters
+* Breaks down costs service by service
+* Can break down costs by timeframe and even estimates the costs for the
+  upcoming months
+* Can filter where money is being spent by tag, region, AZ etc.
+
+## AWS Budgets
+
+* AWS Budgets allows organisations to easily plan and set limits for
+  costs, and create alerts to notify users when they're approaching
+  limits
+* All accounts get two free budgets per month
+* Can setup alerts via email or through SNS, can also configure it to
+  stop EC2 or RDS instances
+* Types of budgets:
+  * Cost budgets - how much to spend on a service
+  * Usage budgets - how much to use one or more services
+  * Reservation budgets - allows users to know whether RIs are unused or
+    under-utilised
+  * Savings Plans budgets - allows users to know whether Savings Plans
+    are unused or under-utilised
+
+## AWS Cost and Usage Reports (AWS CUR)
+
+* The most comprehensive set of cost and usage data for spending
+* Publishes reports to S3
+* Can break down costs by time span, services, resources, or tags
+* Reports are updated daily
+* Reports are in CSV format
+* Integrate reports with other services e.g. Amazon Athena, Amazon
+  Redshift, or Amazon QuickSight
+* Use cases:
+  * Track spending in AWS Organsizations (groups or accounts)
+  * Track Savings Plans usage, cost, and allocations
+  * Monitoring on-demand capacity reservations
+  * Break down data transfer charges
+  * Look into spending on projects by using cost allocation tags as a
+    filter
+
+## AWS Compute Optimizer
+
+* An opt-in service which analyses configurations and utilisation
+  metrics of AWS resources
+* Reports current usage optimisations and recommendations for further
+  optimisations
+* Provides graphical history data and projections - can be used to
+  optimise resources
+* Supports standard accounts, member accounts in an organization, or
+  management accounts across an organization
+* Improve quality of recommendations by activating recommnedation
+  preferences
+
+## Savings Plans
+
+* Offer flexible pricing models - up to 72% savings on compute
+* Lower prices for EC2 instances regardless of instance type, size, OS,
+  tenancy, or region
+* Savings can be applied to Lambda and Fargate
+* Plans are available for SageMaker
+* Savings require long-term commitment (1 or 3 years)
+* Payment can be all upfront, partial upfront, or non upfront - the
+  larger the upfront payment, the greater the savings
+* Savings Plans types:
+  * Compute Savings - most flexible, applies to EC2 compute, Lambda, or
+    Fargate usage, upto 66% savings
+  * EC2 Instance Savings - stricter plans, applies to EC2 instances of a
+    specific family in specific regions, upto 72% savings
+  * SageMaker Savings - applies to all SageMaker instances in any
+    region, applies to any component, upto 64% savings
+* Usage:
+  1. View recommendations in AWS billing console
+  1. Recommendations are automatically calculated
+  1. Add to cart and purchase
+  1. Apply to usage rates after RIs are used up
+  1. Consolidated billing family - appplies to account owner first, and
+     then can be distributed to others by enabling sharing
+
+## Trusted Advisor
+
+* A fully managed best-practice auditing tool
+* Checks 5 areas:
+  * Cost optmisation
+  * Performance
+  * Security
+  * Fault tolerance
+  * Service limits
+* Ideally should automate alerting or fixes
+* If possible automate fixes for issues e.g. EventBridge -> Lambda
+* Trusted advisor is free but for more useful checks, a Business or
+  Enterprise Support plan is needed
+
+## AWS Control Tower
+
+* AWS Control Tower offers an easy way to set up and govern an AWS
+  multi-account environment, following prescriptive best practices
+* Automates account creation and security controls
+* Extends on AWS Organizations to prevent drift from best practices
+  using guardrails
+* Can provision new accounts quickly, using established compliace
+  policies
+* Features:
+  * Landing zone - well-architected, multi-account environment based on
+    compliance and security best practices
+  * Guardrails - high-level rules providing continuous governance for an
+    AWS environment
+  * Account Factory - configurable account template to standardise the
+    provisioning of new accounts with pre-approved configurations
+  * CloudFormation StackSet - automated deployment of templates
+    deploying repeated resources for governance
+  * Shared accounts - three accounts used by Control Tower, two
+    of which are created during the creation of the landing zone
+    (audit, log archive)
+* Guardrails:
+  * Preventive - prevents violating actions, uses service control
+    policies, can either be enforced or not enabled, supported in all
+    regions
+  * Detective - detects and alerts on non compliant resources, uses AWS
+    Config rule, can be clear, in violation, or not enabled, only
+    applied to regions that support Control Tower
+
+## AWS License Manager
+
+* AWS License Manager is a service that makes it easier to manage
+  software licenses from software vendors
+* Centralises management across AWS accounts and on-prem environments
+* Can control usage of licenses by enabling license usage limits
+* Reduces overages and penalties with inventory tracking and rule-based
+  controls
+* Supports any software based on vCPUs, physical cores, sockets, and
+  number of machine types
+
+## AWS Personal Health Dashboard (AWS Health)
+
+* AWS Health provides ongoing visibility into resource performance and
+  the availability of AWS services and accounts
+* View how health events affect you
+* AWS attempts to maintain timeliness and relevant information with the
+  events
+* View upcoming maintenance tasks and how they may affect you
+* Has near-instant delivery of notifications and alerts to aid
+  troubleshooting or prevention
+* Concepts:
+  * AWS Health event - notifications sent on behalf of AWS services or
+    AWS
+  * Account-specific event - events specific to an AWS account or
+    Organization
+  * Public event - events reported on services that are public, not
+    account-specific
+  * AWS Health Dashboard - dashboard which shows account and public
+    events, and service health
+  * Event type code - include the affected services and the specific
+    type of event
+  * Event type category - associated category, attached to every event
+  * Event status - reports if an event is open, closed or upcoming
+  * Affected entities - which AWS resources are / may be affected by the
+    event
+
+## AWS Service Catalog
+
+* Service Catalog enables Organizations to create and manage catalogs of
+  IT services that are approved for AWS
+* Lists AMIs, servers, software, databases, and other preconfigured
+  components
+* AWS Organizations can centrally manage IT services and maintain
+  compliance
+* End users can be permitted to deploy preapproved catalog items
+* Catalog templates are written using CloudFormation templates
+* Benefits:
+  * Standardisation  - restricts the configuration of resources
+  * Self-service discovery and launch - users can browse and deploy
+    approved services
+  * Fine-grain access control - add constraints (and tags), which can be
+    used to grant access via IAM
+  * Extensibility and version control - update products to newer
+    versions and propagate changes automatically
+
+## AWS Proton
+
+* Automated infrastructure as code provisioning and deployment of
+  serverless and container-based applications
+* Use IaC templates to define and manage standard application stacks
+  that contain architecture, infrastructure resources, and CI/CD
+  pipeline
+* Supports CloudFormatation and Terraform
+
+## AWS Well-Architected Tool
+
+* Assists with documenting the decisions around workloads and
+  architecture
+* Provides recommendations for improving workloads based on best
+  practices that have been collected over years
+* Guides for making workloads more reliable, secure, efficient, and
+  cost-effective
+* Intended for specific audiences (largely technical)

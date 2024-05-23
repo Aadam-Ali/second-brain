@@ -1,0 +1,104 @@
+---
+id: 20221208210554
+tags: [aws-saa-c03, databases, rds]
+---
+
+# Databases
+
+## Relational Database Service (RDS) Fundamentals
+
+* RDS supports six database engines: SQL Server, Oracle, MySQL,
+  PostgreSQL, MariaDB, and Amazon Aurora
+* RDS is for OLTP (Online Transaction Processing) workloads
+* Not suitable for OLAP (Online Analytical Processing), use Redshift
+
+## Multi AZ vs Read Replica
+
+* Multi AZ
+  * An exact copy of a database in another AZ
+  * Used for disaster recovery
+  * In the event of a failure, RDS will automatically fail over to the
+    standby instance
+* Read Replica
+  * A read only copy of a primary database in the same AZ, cross AZ, or
+    cross region
+  * Used to increase or scale read performance
+  * Used for read heavy workloads to reduce load on primary database
+
+## Amazon Aurora
+
+* 2 copies of data are stored in each AZ, with minimum of 3 AZs (6
+  copies)
+* You can take snapshots and share them with other AWS accounts
+* 3 types of replicas available: Aurora, MySQL, and PostgreSQL, automated
+  failover is only available for Aurora replicas
+* Aurora has automated backups enabled by default
+* Use Aurora serverless for a cost effective option for unpredictable
+  workloads
+
+## DynamoDB
+
+* Stored on SSD storage
+* Spread across 3 geographically distinct data centre
+* Eventually consistent reads by default, but strongly consistent is
+  available
+
+## DynamoDB Transactions
+
+* Provides ACID (atomicity, consistency, isolation, and durability)
+  across 1 or more tables withing a single account and region
+* All-or-nothing transactions, either inserts or does not
+
+## DynamoDB Backups
+
+* On Demand Backups
+  * Full backups at any time with no impact on performance or
+    availabilty
+  * Consistent within seconds and retained until deleted
+  * Operates in the same region as the source table
+* Point in Time Recovery
+  * Protection against accidental operations
+  * Restore from 5 minutes ago - 35 days ago
+  * Incremental backups
+  * Not enabled by default
+
+## DyanamoDB Global Tables
+
+* Fully managed multi master, multi region replication
+* Based on DynamoDB streams
+  * Time ordered sequence of item-level changes in a table
+  * Stored for 24 hours
+  * Can be combined with Lambda for functionality like stored procedures
+* Multi region redundancy for disaster recovery and high availability
+* Replication latency is under 1 second
+
+## DocumentDB
+
+* Fully managed database service for MongoDB
+* Migrate MongoDB database to AWS
+  * On Prem -> AWS Database Migration Service -> DocumentDB
+
+## Amazon Keyspaces
+
+* Fully managed serverless database service for Apache Cassandra
+* Used to migrate Apache Cassnadra to AWS
+
+## Amazon Neptune
+
+* Amazon's graph database service
+  * Graph database contains nodes and relationships rather than tables
+    and documents
+
+## Amazon Quantum Ledger Database (QLDB)
+
+* A fully managed ledger database
+  * A ledger database contains a transparent, immutable, and
+    cryptographically verifiable transaction log
+
+## Amazon Timestream
+
+* Fully managed, serverless database service for time-series data
+  * Time-series data contain data points that are logged over a series
+    of time e.g. temperature readings from weather stations
+* Upto 1000 times faster at upto 1/10th of the cost of traditional
+  relational databases
