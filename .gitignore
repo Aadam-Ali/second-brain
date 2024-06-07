@@ -1,1 +1,6 @@
+.obsidian/
+inbox/
 work/
+
+*.private.md
+*.swp

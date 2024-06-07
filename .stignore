@@ -1,0 +1,10 @@
+.git
+.*.swp
+
+!.obsidian/app.json
+!.obsidian/plugins/obsidian-excalidraw-plugin/data.json
+.obsidian/
+
+.pre-commit-config.yaml
+.gitignore
+LICENSE
