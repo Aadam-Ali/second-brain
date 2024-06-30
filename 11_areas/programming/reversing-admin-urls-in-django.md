@@ -1,6 +1,6 @@
 ---
 id: 20240607110900
-tags: [django]
+tags: [python, django]
 ---
 
 # Reversing Admin URLs in Django
