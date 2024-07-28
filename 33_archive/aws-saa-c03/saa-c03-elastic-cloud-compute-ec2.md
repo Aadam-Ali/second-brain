@@ -3,7 +3,7 @@ id: 20221204122753
 tags: [aws-saa-c03, ec2]
 ---
 
-# Elastic Cloud Compute (EC2)
+# Elastic Cloud Compute (EC2) (SAA-C03)
 
 ## What is EC2?
 
@@ -22,7 +22,7 @@ tags: [aws-saa-c03, ec2]
 | Reserved  | Up to 72% discount on hourly charge                                     | Known, fixed requirements                                     |
 | Dedicated | On-Demand or Reserved (up to 70% discount)                              | Server bound licensing or compliance requirements             |
 
-## IAM Roles
+## [[saa-c03-identity-and-access-management-iam|IAM]] Roles
 
 * Preferred option to provide EC2 access to other AWS services from a
   security POV

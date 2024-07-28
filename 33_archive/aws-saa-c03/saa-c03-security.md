@@ -3,7 +3,7 @@ id: 20230527125851
 tags: [aws-saa-c03, security, waf]
 ---
 
-# Security
+# Security (SAA-C03)
 
 ## Distributed Denial of Service (DDoS)
 
@@ -42,8 +42,10 @@ tags: [aws-saa-c03, security, waf]
 ## Shield
 
 * Free DDoS protection
-* Offers protection to services using ELB, CloudFront, and Route 53
-* Protection against layer 3 and 4 attacks
+* Offers protection to services using ELB, CloudFront, and
+  [[saa-c03-route-53|Route 53]]
+* Protection against [[osi-model-network-layer-3|layer 3]] and
+  [[osi-model-transport-layer-4| 4]]
 * AWS Shield Advanced:
   * Provided enhanced protections for applications using the above
     services against larger and more complex attacks
@@ -202,7 +204,7 @@ tags: [aws-saa-c03, security, waf]
 ## Advanced IAM Policy Documents
 
 * All ARNs begin `arn:partition:service:region:account_id:...`
-* IAM Policies:
+* [[saa-c03-identity-and-access-management-iam|IAM]] Policies:
   * A JSON document that defines permissions
   * Identity policy - a policy that is attached to users and groups
   * Resource policy - a policy that is attached to resources
@@ -289,3 +291,9 @@ tags: [aws-saa-c03, security, waf]
   * Conducting Cloud Security Posture Management (CSPM)
   * Identifying possible threats as multiple data sources are
     aggregated
+
+Related:
+  * [[osi-model-application-layer-7]]
+  * [[saa-c03-virtual-private-cloud-vpc]]
+  * [[saa-c03-simple-storage-service-s3]]
+  * [[saa-c03-elastic-load-balancing-elb]]

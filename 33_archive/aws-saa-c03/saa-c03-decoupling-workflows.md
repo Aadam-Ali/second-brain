@@ -3,7 +3,7 @@ id: 20230503183930
 tags: [aws-saa-c03, sqs, sns]
 ---
 
-# Decoupling Workflows
+# Decoupling Workflows (SAA-C03)
 
 ## Overview
 
@@ -104,7 +104,7 @@ tags: [aws-saa-c03, sqs, sns]
 ## AWS Batch
 
 * An AWS service which allows you to run batch computing workloads with
-  EC2 or ECS/Fargate
+  [[saa-c03-elastic-cloud-compute-ec2|EC2]] or ECS/Fargate
 * Abstracts the configuration and management of infrastructure away from
   the user
 * Automatically provisions, scales and distributes workloads based on
@@ -128,8 +128,9 @@ tags: [aws-saa-c03, sqs, sns]
       limits
 * AWS Batch vs Lambda:
     * Lambda has a 15 minutes execution limit, Batch does not
-    * Lambda has limited disk space, and EFS requires a Lambda to be in
-      a VPC
+    * Lambda has limited disk space, and
+      [[saa-c03-elastic-block-storage-ebs-elastic-file-system-efs|EFS]]
+      requires a Lambda to be in a VPC
     * Lambda is fully serverless but it has limited runtimes by default
     * Batch used Docker, so any runtime can be used
 * Managed compute environment:
@@ -220,7 +221,8 @@ tags: [aws-saa-c03, sqs, sns]
 
 * A fully managed service for exchanging data between SaaS apps and AWS
   services
-* Pulls data records from SaaS vendors and stores them in S3
+* Pulls data records from SaaS vendors and stores them in
+  [[saa-c03-simple-storage-service-s3|S3]]
 * Bi-directional data transfer with limited source / destination
   combinations
 * Flows transfer data between sources and destinations

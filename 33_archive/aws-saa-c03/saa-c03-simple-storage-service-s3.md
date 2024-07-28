@@ -3,7 +3,7 @@ id: 20221203141054
 tags: [aws-saa-c03, s3]
 ---
 
-# Simple Storage Service (S3)
+# Simple Storage Service (S3) (SAA-C03)
 
 ## Key Points
 

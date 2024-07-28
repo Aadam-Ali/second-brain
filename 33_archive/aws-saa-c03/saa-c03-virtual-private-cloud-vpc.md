@@ -3,7 +3,7 @@ id: 20230210110617
 tags: [aws-saa-c03, vpc, networking]
 ---
 
-# Virtual Private Cloud (VPC)
+# Virtual Private Cloud (VPC) (SAA-C03)
 
 ## VPC Fundamentals
 
@@ -23,7 +23,8 @@ tags: [aws-saa-c03, vpc, networking]
 * *Default*
   * User friendly
   * All subnets have internet connectivity
-  * EC2 instances have public and private IP addresses
+  * [[saa-c03-elastic-cloud-compute-ec2|EC2]] instances have public and
+    private IP addresses
 * *Custom*
   * Completely customisable
   * Longer setup
@@ -76,7 +77,7 @@ tags: [aws-saa-c03, vpc, networking]
   * Interface endpoints - elastic network interface with a private IP
     address for supported AWS services
   * Gateway endpoints - A virtual device provisioned by a user, supports
-    S3 and DynamoDB
+    [[saa-c03-simple-storage-service-s3|S3]] and DynamoDB
 
 ## VPC Peering
 

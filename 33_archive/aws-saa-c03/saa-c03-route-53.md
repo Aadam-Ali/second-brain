@@ -3,7 +3,7 @@ id: 20230212133907
 tags: [aws-saa-c03, route53, dns]
 ---
 
-# Route 53
+# Route 53 (SAA-C03)
 
 ## Overview
 
@@ -26,9 +26,10 @@ tags: [aws-saa-c03, route53, dns]
   address
 * CNAME (canonical name) records are used to resolve one DN to another,
   think subdomains
-* Alias records (AWS specific) are used to map resource record sets in
-  a hosted zone to LBs, CloudFront distributions, or static websites
-  in S3
+* Alias records (AWS specific) are used to map resource record sets in a
+  hosted zone to [[saa-c03-elastic-load-balancing-elb|LBs]], CloudFront
+  distributions, or static websites in
+  [[saa-c03-simple-storage-service-s3|S3]]
 
 ## Registering a Domain Name
 

@@ -3,7 +3,7 @@ id: 20230608191203
 tags: [aws-saa-c03, caching]
 ---
 
-# Caching
+# Caching (SAA-C03)
 
 ## Where To Cache?
 
@@ -13,9 +13,10 @@ tags: [aws-saa-c03, caching]
 
 ## CloudFront
 
-* CloudFront defaults to HTTPS, with the ability to use custom SSL
-  certificates
-* CloudFront is the only way to serve static S3 websites using HTTPS
+* CloudFront defaults to [[https-overview|HTTPS]], with the ability to
+  use custom SSL certificates
+* CloudFront is the only way to serve static
+  [[saa-c03-simple-storage-service-s3|S3]] websites using HTTPS
 * CloudFront distributes content in general areas, contitnents not
   countries
 * CloudFront can be used to block individual countries
@@ -47,10 +48,10 @@ tags: [aws-saa-c03, caching]
 * An in-memory cache which can reduce response times from milliseconds
   to microseconds
 * DAX is highly available
-* DAX lives within a VPC
+* DAX lives within a [[saa-c03-virtual-private-cloud-vpc|VPC]]
 * Does not support backups
-* User determines the node size and count for the cluster, TTL for
-  data, and maintenance windows for updates
+* User determines the node size and count for the cluster, TTL for data,
+  and maintenance windows for updates
 
 ## Global Accelerator
 

@@ -3,7 +3,7 @@ id: 20230805182307
 tags: [aws-saa-c03, ml]
 ---
 
-# Machine Learning
+# Machine Learning (SAA-C03)
 
 ## Amazon Comprehend
 
@@ -26,7 +26,8 @@ tags: [aws-saa-c03, ml]
   specific answers to search questions from your data
 * Use cases:
   * Accelerating research and development by consolidating data from
-    various sources (S3 buckets, databases, text files etc.)
+    various sources ([[saa-c03-simple-storage-service-s3|S3]] buckets,
+    [[saa-c03-databases|databases]], text files etc.)
   * Improve customer experience by better understanding customer needs
     and returning relevant information
   * Minimising regulatory and compliance risks by automating the
@@ -40,8 +41,9 @@ tags: [aws-saa-c03, ml]
   handwriting, and data from scanned documents
 * Uses machine learning and OCR, it can process text, handwriting,
   tables and more automatically
-* Can convert text into data that can be stored in AWS (S3 buckets,
-  databases etc.)
+* Can convert text into data that can be stored in AWS
+  ([[saa-c03-simple-storage-service-s3|S3]] buckets,
+  [[saa-c03-databases|databases]] etc.)
 * Main use case is converting hand written documents into computer
   readable formats e.g. mortgage application
 
@@ -126,8 +128,8 @@ tags: [aws-saa-c03, ml]
   * Ouput format depends on algorithm vs. JSON string
 * Stages:
   1. Create a model
-  1. Create an endpoint configuration
-  1. Create an endpoint
+  2. Create an endpoint configuration
+  3. Create an endpoint
 * SageMaker Neo
   * Allows customisation of hardware for specific CPU architectures e.g.
     ARM, Intel and Nvidia

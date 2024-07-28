@@ -3,7 +3,7 @@ id: 20230610142206
 tags: [aws-saa-c03, governance]
 ---
 
-# Governance
+# Governance (SAA-C03)
 
 ## Organizations
 
@@ -12,7 +12,8 @@ tags: [aws-saa-c03, governance]
 * Key features:
   * Logging accounts to centralise logs
   * Programmatic creation
-  * Reserved instances are shared across accounts
+  * [[saa-c03-elastic-cloud-compute-ec2|Reserved instances]] are shared
+    across accounts
   * Billing for all accounts is managed by the root account
   * Service Control Policies (SCPs) to limit permissions for accounts,
     has the highest priority
@@ -21,13 +22,14 @@ tags: [aws-saa-c03, governance]
 
 * A free service to share resources with other accounts, either
   externally or within an organisation
-* RAM or VPC Peering?
+* RAM or [[saa-c03-virtual-private-cloud-vpc|VPC]] Peering?
   * RAM should be used when sharing resources within the same region
   * VPC Peering should be used when sharing resources across regions
 
 ## Cross Account Role Access
 
-* Create cross account roles rather than new IAM users
+* Create cross account roles rather than new
+  [[saa-c03-identity-and-access-management-iam|IAM]] users
 * Using IAM roles prevents the need to distribute permanent credentials
 
 ## AWS Config
@@ -76,7 +78,7 @@ tags: [aws-saa-c03, governance]
 ## AWS Cost and Usage Reports (AWS CUR)
 
 * The most comprehensive set of cost and usage data for spending
-* Publishes reports to S3
+* Publishes reports to [[saa-c03-simple-storage-service-s3|S3]]
 * Can break down costs by time span, services, resources, or tags
 * Reports are updated daily
 * Reports are in CSV format
@@ -122,10 +124,10 @@ tags: [aws-saa-c03, governance]
     region, applies to any component, upto 64% savings
 * Usage:
   1. View recommendations in AWS billing console
-  1. Recommendations are automatically calculated
-  1. Add to cart and purchase
-  1. Apply to usage rates after RIs are used up
-  1. Consolidated billing family - appplies to account owner first, and
+  2. Recommendations are automatically calculated
+  3. Add to cart and purchase
+  4. Apply to usage rates after RIs are used up
+  5. Consolidated billing family - appplies to account owner first, and
      then can be distributed to others by enabling sharing
 
 ## Trusted Advisor
@@ -134,7 +136,7 @@ tags: [aws-saa-c03, governance]
 * Checks 5 areas:
   * Cost optmisation
   * Performance
-  * Security
+  * [[saa-c03-security|Security]]
   * Fault tolerance
   * Service limits
 * Ideally should automate alerting or fixes

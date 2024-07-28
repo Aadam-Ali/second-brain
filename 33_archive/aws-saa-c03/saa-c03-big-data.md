@@ -3,7 +3,7 @@ id: 20230511170245
 tags: [aws-saa-c03, big-data]
 ---
 
-# Big Data
+# Big Data (SAA-C03)
 
 ## The 3 V's of Big Data
 
@@ -143,3 +143,7 @@ tags: [aws-saa-c03, big-data]
   * Flexible - has SQL support for BI apps
   * Integrations - easily integrated with CloudWatch, CloudTrail, S3,
     and Kinesis
+
+Related:
+  * [[saa-c03-simple-storage-service-s3]]
+  * [[saa-c03-elastic-cloud-compute-ec2]]

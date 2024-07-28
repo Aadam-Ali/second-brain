@@ -3,11 +3,12 @@ id: 20230309161615
 tags: [aws-saa-c03, asg]
 ---
 
-# High Availability and Scaling
+# High Availability and Scaling (SAA-C03)
 
 ## Horizontal vs. Vertical Scaling
 
-* Vertical scaling is increasing the size (e.g. using a bigger EC2
+* Vertical scaling is increasing the size (e.g. using a bigger
+  [[saa-c03-elastic-cloud-compute-ec2|EC2]]
   instance type)
 * Horizontal scaling is increasing the amount
 * Horizontal scaling is more suitable for HA systems
@@ -45,7 +46,8 @@ tags: [aws-saa-c03, asg]
   * Define a template
   * Networking and purchasing (use at least 2 AZs, ASG will balance
     across AZs)
-  * ELB configuration (should use ELB health check)
+  * [[saa-c03-elastic-load-balancing-elb|ELB]] configuration (should use
+    ELB health check)
   * Set scaling policies
   * Notifications (using SNS)
 * Minimum is the lowest number of instances, should generally be set to

@@ -3,15 +3,18 @@ id: 20230305150147
 tags: [aws-saa-c03, elb]
 ---
 
-# Elastic Load Balancing (ELB)
+# Elastic Load Balancing (ELB) (SAA-C03)
 
 ## Overview
 
 * ELB distributes incoming traffic across a set of targets, can be done
   across AZs
-* Application Load Balancer - best for HTTP(S), operates at layer 7
-  (application), and are application aware; ALB is an intelligent LB
-* Network Load Balancer - Operates at layer 4 (transport), capable of
+* Application Load Balancer - best for
+  [[http-overview|HTTP]]([[https-overview|HTTPS]]), operates at
+  [[osi-model-application-layer-7|layer 7]] (application), and are
+  application aware; ALB is an intelligent LB
+* Network Load Balancer - Operates at
+  [[osi-model-application-layer-4|layer 4]] (transport), capable of
   handling millions of requests per second with ultra low latencies;
   NLB is a performance LB
 * Classic Load Balancer - Legacy LB, can load balance HTTP(S) apps while

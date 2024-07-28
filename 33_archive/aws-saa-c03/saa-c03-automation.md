@@ -3,7 +3,7 @@ id: 20230606190518
 tags: [aws-saa-c03, automation]
 ---
 
-# Automation
+# Automation (SAA-C03)
 
 ## Why Automate? And What Are The Benefits?
 
@@ -18,7 +18,7 @@ tags: [aws-saa-c03, automation]
 * A declarative programming language, supports JSON and YAML
 * Used to provision immutable infrastructure
 * Templates consist of parameters, mappings, and resources
-* Templates are automatically stored in S3
+* Templates are automatically stored in [[saa-c03-simple-storage-service-s3|S3]]
 * Hard coded values can be a point of failure when deploying in multiple
   regions, mappings can be used to avoid this by providing region
   specific values
@@ -32,18 +32,20 @@ tags: [aws-saa-c03, automation]
   form of a template
 * Can handle testing applications in a staging environment before
   deploying to production
-* Automatically provisions EC2 instances and their underlying OS
+* Automatically provisions [[saa-c03-elastic-cloud-compute-ec2|EC2]] instances
+  and their underlying OS
 
 ## Systems Manager
 
 * A set of tools to view, control, and automate AWS architecture and
   on-prem resources
 * Features (include but are not limited to):
-  * Automation Documents (Runbooks) - can used to control EC2 instances,
-    or other AWS resources
+  * Automation Documents (Runbooks) - can used to control
+    [[elastic-cloud-compute-ec2|EC2]] instances, or other AWS resources
   * Run Command - execute commands on hosts
   * Patch Manager - manages application versions
   * Parameter Store - securely store secret values
   * Hybrid Activations - control on-prem architecture using Systems
     Manager
-  * Session Manager - remotely connect to EC2 instances without SSH
+  * Session Manager - remotely connect to
+    [[elastic-cloud-compute-ec2|EC2]] instances without SSH

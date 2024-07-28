@@ -3,7 +3,7 @@ id: 20221121205221
 tags: [aws-saa-c03, iam]
 ---
 
-# Identity and Access Management (IAM)
+# Identity and Access Management (IAM) (SAA-C03)
 
 ## Securing the Root Account
 

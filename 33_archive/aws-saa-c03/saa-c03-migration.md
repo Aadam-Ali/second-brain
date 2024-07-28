@@ -3,7 +3,7 @@ id: 20230717192701
 tags: [aws-saa-c03, migration]
 ---
 
-# Migration
+# Migration (SAA-C03)
 
 ## How To Migrate Data?
 
@@ -105,7 +105,7 @@ tags: [aws-saa-c03, migration]
 * AWS SMS automates the migration of on-prem servers to AWS
 * Supports vSphere, Hyper-V, SCVMM, and Azure VMs
 * Creates incremental replicas of server VMs, and converts them to AMIs
-  that can be deployed to EC2
+  that can be deployed to [[saa-c03-elastic-cloud-compute-ec2|EC2]]
 * Handles volume replication
 * Can schedule replication intervals as you wish and track the progress
   of server groups as they migrate
@@ -127,12 +127,12 @@ tags: [aws-saa-c03, migration]
 * Gain advantages of AWS e.g. cost, efficiency, security etc.
 * How DMS works:
   1. Create source and target connections
-  1. Schedule tasks to run on the DMS server to migrate data
-  1. AWS creates the tables and primary keys (if they do not exist) -
+  2. Schedule tasks to run on the DMS server to migrate data
+  3. AWS creates the tables and primary keys (if they do not exist) -
      optionally, you can create the tables beforehand
-  1. Leverage the SCT for creating some or all of the tables, indexes
+  4. Leverage the SCT for creating some or all of the tables, indexes
      etc.
-  1. Source and target are referred to as endpoints
+  5. Source and target are referred to as endpoints
 * Data can easily between migrated to the same engine
 * Data can be migrated between different engines
 * Migration types:
@@ -193,3 +193,7 @@ tags: [aws-saa-c03, migration]
 * Recovery Time Objective (RTO) - usually just minutes; depends on OS
   boot time
 * Recovery Point Objective (RPO) - measure in the sub-second range
+
+Related:
+  * [[saa-c03-simple-storage-service-s3]]
+  * [[saa-c03-elastic-block-storage-ebs-elastic-file-system-efs]]

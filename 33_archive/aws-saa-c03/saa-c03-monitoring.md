@@ -3,11 +3,12 @@ id: 20230307172701
 tags: [aws-saa-c03, observability]
 ---
 
-# Monitoring
+# Monitoring (SAA-C03)
 
 ## CloudWatch Overview
 
-* System level metrics e.g. EC2 instance monitoring
+* System level metrics e.g. [[saa-c03-elastic-cloud-compute-ec2|EC2]]
+  instance monitoring
 * Application level metrics - can be collected by installing CloudWatch
   agent
 * Alarms will send alerts based on trends in the data collected
@@ -15,7 +16,9 @@ tags: [aws-saa-c03, observability]
 * Default metrics are provided out of the box and require no
   configuration e.g. CPU Utilisation and Network Throughput
 * Custom metrics require the presence of the CloudWatch agent on the
-  host e.g. EC2 Memory Utilisation and EBS Storage Capacity
+  host e.g. EC2 Memory Utilisation and
+  [[saa-c03-elastic-block-storage-ebs-elastic-file-system-efs|EBS]]
+  Storage Capacity
 
 ## CloudWatch Logs
 
@@ -27,7 +30,7 @@ tags: [aws-saa-c03, observability]
 * CloudWatch Logs Insights allow you to query logs similar way to SQL
 * Alarms will send alerts based on trends in logs
 * When logs don't need to be processed they should be sent straight to
-  S3
+  [[saa-c03-simple-storage-service-s3|S3]]
 * Requires the CloudWatch agent to be configured on the host
 
 ## AWS Managed Grafana

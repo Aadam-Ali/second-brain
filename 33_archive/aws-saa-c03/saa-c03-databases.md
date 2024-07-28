@@ -3,7 +3,7 @@ id: 20221208210554
 tags: [aws-saa-c03, databases, rds]
 ---
 
-# Databases
+# Databases (SAA-C03)
 
 ## Relational Database Service (RDS) Fundamentals
 
@@ -24,6 +24,7 @@ tags: [aws-saa-c03, databases, rds]
     cross region
   * Used to increase or scale read performance
   * Used for read heavy workloads to reduce load on primary database
+* Related: [[saa-c03-high-availability-and-scaling]]
 
 ## Amazon Aurora
 

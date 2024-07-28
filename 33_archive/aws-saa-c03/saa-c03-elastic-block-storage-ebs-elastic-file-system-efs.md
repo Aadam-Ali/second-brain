@@ -3,7 +3,7 @@ id: 20221205171813
 tags: [aws-saa-c03, ebs, efs]
 ---
 
-# Elastic Block Storage (EBS) / Elastic File System (EFS)
+# Elastic Block Storage (EBS) / Elastic File System (EFS) (SAA-C03)
 
 ## EBS Volume Types
 
@@ -40,7 +40,8 @@ tags: [aws-saa-c03, ebs, efs]
 
 ## EBS Volumes and Snapshots
 
-* Volumes exist on EBS, whereas snapshots exist on S3
+* Volumes exist on EBS, whereas snapshots exist on
+  [[saa-c03-simple-storage-service-s3|S3]]
 * Snapshots only contain changes from the previous snapshot
 * Best practice is to stop an instance and detach the volume before
   taking a snapshot
@@ -59,7 +60,7 @@ tags: [aws-saa-c03, ebs, efs]
   * Create a copy of snapshot with encrypt option ticked
   * Create AMI from the snapshot
 
-## EC2 Hibernation
+## [[saa-c03-elastic-cloud-compute-ec2|EC2]] Hibernation
 
 * Preserves instance's RAM on persistent storage (EBS)
 * Speeds up boot times as OS does not have to be reloaded

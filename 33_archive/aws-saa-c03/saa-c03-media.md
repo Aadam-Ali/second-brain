@@ -3,13 +3,13 @@ id: 20230806141615
 tags: [aws-saa-c03, media]
 ---
 
-# Media
+# Media (SAA-C03)
 
 ## Amazon Elastic Transcoder
 
 * Amazon Elastic Transcoder lets you convert media files that you have
-  stored in Amazon Simple Storage Service (Amazon S3) into media files
-  in the formats required by consumer playback devices
+  stored in Amazon [[saa-c03-simple-storage-service-s3|Simple Storage Service (Amazon S3)]]
+  into media files in the formats required by consumer playback devices
 * Benefits:
   * Easy to use
   * Elastically scalable

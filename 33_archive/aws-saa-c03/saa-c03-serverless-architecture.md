@@ -3,7 +3,7 @@ id: 20230520143731
 tags: [aws-saa-c03, serverless]
 ---
 
-# Serverless Architecture
+# Serverless Architecture (SAA-C03)
 
 ## Serverless Overview
 
@@ -57,12 +57,14 @@ tags: [aws-saa-c03, serverless]
 * Image - an immutable file which contains the code, dependencies, and
   configuration required to run the code
 * Registry - a service which stores Docker images
-* Container - a running instance of an image
+* [[what-is-a-container|Container]] - a running instance of an image
+
 
 ## Elastic Container Service (ECS)
 
 * Can manage thousands of containers
-* Containers are (de)registered with ELBs when they come online / go
+* Containers are (de)registered with
+  [[saa-c03-elastic-load-balancing-elb|ELBs]] when they come online / go
   offline
 * Containers can have roles attached to them if they need to speak to
   other AWS services
@@ -79,7 +81,7 @@ tags: [aws-saa-c03, serverless]
 
 * A serverless compute engine for containers that works with both ECS
   and EKS
-* EC2:
+* [[saa-c03-elastic-cloud-compute-ec2|EC2]]:
   * Benefit from the EC2 pricing model - RIs, savings plans etc.
   * Better for long running workloads
   * Multiple containers can be run on the same host

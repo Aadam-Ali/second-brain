@@ -3,7 +3,7 @@ id: 20230804153553
 tags: [aws-saa-c03, frontend]
 ---
 
-# Front-End Web and Mobile
+# Front-End Web and Mobile (SAA-C03)
 
 ## AWS Amplify
 
@@ -54,3 +54,6 @@ tags: [aws-saa-c03, frontend]
     * Machine learning - use ML models to predict user patterns
 * Primarily used for marketing, transaction messages, and bulk messaging
   users
+
+Related:
+  * [[saa-c03-aws-fundamentals]]
